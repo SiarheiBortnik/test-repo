@@ -1,0 +1,16 @@
+name: Show Current Date and Time
+on:  
+  workflow_dispatch: # This event will only trigger the workflow manually&nbsp;  
+  
+jobs:  
+  show-date-time:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Checkout code  
+        uses: actions/checkout@v2  
+      - name: Set up Python  
+        uses: actions/setup-python@v2  
+        with:  
+          python-version: '3.x'  
+      - name: Show Current Date and Time  
+        run: python -c "import datetime; print(datetime.datetime.now())"
